@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://kdoruruyutkm"]
+
+[ext_resource type="Script" path="res://levels/game_over_trigger.gd" id="1_1lvf1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jyvg2"]
+size = Vector2(1024, 64)
+
+[node name="game_over_trigger" type="Area2D"]
+collision_layer = 4
+script = ExtResource("1_1lvf1")
+
+[node name="collision" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_jyvg2")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

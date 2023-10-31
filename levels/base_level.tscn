@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://cy647nxbk27vk"]
+
+[ext_resource type="Script" path="res://levels/base_level.gd" id="1_rw0og"]
+[ext_resource type="PackedScene" uid="uid://dfa2it8cl0q81" path="res://actors/dropper.tscn" id="2_pe3dm"]
+[ext_resource type="PackedScene" uid="uid://n6qr1mqlra7n" path="res://levels/floor.tscn" id="3_jgma1"]
+[ext_resource type="PackedScene" uid="uid://kdoruruyutkm" path="res://levels/game_over_trigger.tscn" id="4_iiry7"]
+
+[node name="base_level" type="Node2D"]
+script = ExtResource("1_rw0og")
+
+[node name="dropper" parent="." instance=ExtResource("2_pe3dm")]
+position = Vector2(264, 98)
+
+[node name="floor" parent="." instance=ExtResource("3_jgma1")]
+position = Vector2(264, 966)
+scale = Vector2(3, 0.5)
+
+[node name="floor2" parent="." instance=ExtResource("3_jgma1")]
+position = Vector2(486, 678)
+rotation = -1.5708
+
+[node name="floor3" parent="." instance=ExtResource("3_jgma1")]
+position = Vector2(40, 680)
+rotation = 1.5708
+
+[node name="game_over_trigger" parent="." instance=ExtResource("4_iiry7")]
+position = Vector2(264, 288)

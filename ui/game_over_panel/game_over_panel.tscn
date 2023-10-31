@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://bg4qdl2e1uy33"]
+
+[ext_resource type="Script" path="res://ui/game_over_panel/game_over_panel.gd" id="1_dkjux"]
+[ext_resource type="PackedScene" uid="uid://cqg5bdfshqsca" path="res://ui/quit_warning.tscn" id="2_hthor"]
+
+[node name="game_over_panel" type="CenterContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_dkjux")
+
+[node name="vbox_container" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="label" type="Label" parent="vbox_container"]
+layout_mode = 2
+text = "GAME OVER!"
+
+[node name="restart_button" type="Button" parent="vbox_container"]
+layout_mode = 2
+text = "Restart"
+
+[node name="main_menu_button" type="Button" parent="vbox_container"]
+layout_mode = 2
+text = "Main Menu"
+
+[node name="quit_warning" parent="." instance=ExtResource("2_hthor")]
+layout_mode = 2
+
+[connection signal="pressed" from="vbox_container/restart_button" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="vbox_container/main_menu_button" to="." method="_on_main_menu_button_pressed"]
+[connection signal="quit_cancel" from="quit_warning" to="." method="_on_quit_warning_quit_cancel"]
+[connection signal="quit_confirm" from="quit_warning" to="." method="_on_quit_warning_quit_confirm"]

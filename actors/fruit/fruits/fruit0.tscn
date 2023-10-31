@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bi5lbuv4dvylr"]
+
+[ext_resource type="PackedScene" uid="uid://cf38iqbw5fw6f" path="res://actors/fruit/fruit.tscn" id="1_g0d6m"]
+
+[node name="fruit0" instance=ExtResource("1_g0d6m")]
+
+[node name="sprite" parent="." index="1"]
+scale = Vector2(0.25, 0.25)
+
+[node name="collision" parent="." index="2"]
+scale = Vector2(0.25, 0.25)

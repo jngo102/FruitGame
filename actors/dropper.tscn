@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfa2it8cl0q81"]
+
+[ext_resource type="Script" path="res://actors/dropper.gd" id="1_knt05"]
+[ext_resource type="Texture2D" uid="uid://ctbubyd7jexb1" path="res://icon.svg" id="2_ral30"]
+
+[node name="dropper" type="Node2D"]
+script = ExtResource("1_knt05")
+
+[node name="sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_ral30")
+
+[node name="spawn_timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="left_limit" type="Marker2D" parent="."]
+position = Vector2(-200, 0)
+
+[node name="right_limit" type="Marker2D" parent="."]
+position = Vector2(200, 0)

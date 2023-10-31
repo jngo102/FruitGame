@@ -1,0 +1,65 @@
+[gd_scene load_steps=4 format=3 uid="uid://c76nimu8k6jua"]
+
+[ext_resource type="Script" path="res://levels/main_menu/main_menu.gd" id="1_gms20"]
+[ext_resource type="PackedScene" uid="uid://xmhpn38awq6d" path="res://ui/menu_button.tscn" id="2_dmkoc"]
+[ext_resource type="PackedScene" uid="uid://cqg5bdfshqsca" path="res://ui/quit_warning.tscn" id="3_krurc"]
+
+[node name="main_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gms20")
+
+[node name="animator" type="AnimationPlayer" parent="."]
+
+[node name="margin_container" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="menu_buttons" type="VBoxContainer" parent="margin_container"]
+layout_mode = 2
+alignment = 1
+
+[node name="start_button" parent="margin_container/menu_buttons" instance=ExtResource("2_dmkoc")]
+layout_mode = 2
+text = "Start"
+
+[node name="leaderboard_button" parent="margin_container/menu_buttons" instance=ExtResource("2_dmkoc")]
+layout_mode = 2
+text = "Leaderboard"
+
+[node name="quit_button" parent="margin_container/menu_buttons" instance=ExtResource("2_dmkoc")]
+visible = false
+layout_mode = 2
+text = "Quit"
+
+[node name="leaderboard" type="VBoxContainer" parent="margin_container"]
+visible = false
+layout_mode = 2
+
+[node name="back_button" type="Button" parent="margin_container/leaderboard"]
+layout_mode = 2
+text = "Back"
+
+[node name="quit_warning" parent="margin_container" instance=ExtResource("3_krurc")]
+layout_mode = 2
+
+[connection signal="pressed" from="margin_container/menu_buttons/start_button" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="margin_container/menu_buttons/leaderboard_button" to="." method="_on_leaderboard_button_pressed"]
+[connection signal="pressed" from="margin_container/menu_buttons/quit_button" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="margin_container/leaderboard/back_button" to="." method="_on_back_button_pressed"]
+[connection signal="quit_cancel" from="margin_container/quit_warning" to="." method="_on_quit_warning_quit_cancel"]
+[connection signal="quit_confirm" from="margin_container/quit_warning" to="." method="_on_quit_warning_quit_confirm"]
+
+[editable path="margin_container/menu_buttons/quit_button"]

@@ -1,0 +1,49 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Fruit Game"
+run/main_scene="res://levels/main/main.tscn"
+config/features=PackedStringArray("4.1", "GL Compatibility")
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/show_image=false
+
+[autoload]
+
+GameManager="*res://autoload/game_manager/game_manager.tscn"
+Globals="*res://autoload/globals.gd"
+SaveManager="*res://autoload/save_manager/save_manager.tscn"
+ScoreManager="*res://autoload/score_manager/score_manager.tscn"
+SceneManager="*res://autoload/scene_manager/scene_manager.tscn"
+UIManager="*res://ui/ui_manager/ui_manager.tscn"
+
+[display]
+
+window/size/viewport_width=540
+window/size/viewport_height=960
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
+window/handheld/orientation=1
+
+[dotnet]
+
+project/assembly_name="Game Template"
+
+[layer_names]
+
+2d_physics/layer_1="fruit"
+2d_physics/layer_2="terrain"
+2d_physics/layer_3="detector"
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"

@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://cf38iqbw5fw6f"]
+
+[ext_resource type="Script" path="res://actors/fruit/fruit.gd" id="1_eexhq"]
+[ext_resource type="Texture2D" uid="uid://ct7ax6vl8vldn" path="res://actors/fruit/circle.svg" id="1_pudlu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6v5c8"]
+radius = 32.0
+
+[node name="fruit" type="RigidBody2D" groups=["fruit"]]
+collision_mask = 3
+gravity_scale = 2.0
+continuous_cd = 1
+max_contacts_reported = 1
+contact_monitor = true
+can_sleep = false
+script = ExtResource("1_eexhq")
+
+[node name="audio" type="AudioStreamPlayer2D" parent="."]
+
+[node name="sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_pudlu")
+
+[node name="collision" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_6v5c8")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
