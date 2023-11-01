@@ -1,3 +1,3 @@
 # Fruit Game
 
-Main repository for jngo's Fruit Game, made with Godot.
+Main repository for Fruit Game, a game about stacking fruit, made in Godot.

@@ -1,5 +1,4 @@
 extends Node2D
-class_name Dropper
 
 @onready var spawn_timer: Timer = $spawn_timer
 @onready var left_limit: float = $left_limit.global_position.x
@@ -12,12 +11,12 @@ func _ready() -> void:
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		global_position.x = clampf(event.position.x, left_limit, right_limit)
-	elif event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-		drop(event.position)
+	elif event is InputEventMouseButton and not event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		drop(clampf(event.position.x, left_limit, right_limit))
 
-func drop(pos: Vector2) -> void:
+func drop(x: float) -> void:
 	if not GameManager.in_game: return
-	global_position.x = pos.x
+	global_position.x = x
 	if held_fruit == null: return
 	held_fruit.freeze = false
 	remove_child(held_fruit)
