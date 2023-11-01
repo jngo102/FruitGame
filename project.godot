@@ -19,7 +19,7 @@ boot_splash/show_image=false
 [autoload]
 
 GameManager="*res://autoload/game_manager/game_manager.tscn"
-Globals="*res://autoload/globals.gd"
+Globals="*res://autoload/globals/globals.tscn"
 SaveManager="*res://autoload/save_manager/save_manager.tscn"
 ScoreManager="*res://autoload/score_manager/score_manager.tscn"
 SceneManager="*res://autoload/scene_manager/scene_manager.tscn"

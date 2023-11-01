@@ -30,7 +30,7 @@ func drop(pos: Vector2) -> void:
 	spawn_fruit()
 
 func spawn_fruit() -> void:
-	var fruit_scene: PackedScene = Globals.fruit_order[randi_range(0, len(Globals.fruit_order) - 1)]
+	var fruit_scene: PackedScene = Globals.spawnable_fruit[randi_range(0, len(Globals.spawnable_fruit) - 1)]
 	held_fruit = fruit_scene.instantiate()
 	held_fruit.freeze = true
 	add_child(held_fruit)

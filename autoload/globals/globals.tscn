@@ -1,0 +1,13 @@
+[gd_scene load_steps=7 format=3 uid="uid://fiiymjt2j2v6"]
+
+[ext_resource type="Script" path="res://autoload/globals/globals.gd" id="1_qbgql"]
+[ext_resource type="PackedScene" uid="uid://bi5lbuv4dvylr" path="res://actors/fruit/fruits/fruit0.tscn" id="2_osk7j"]
+[ext_resource type="PackedScene" uid="uid://tusggw1q8tpp" path="res://actors/fruit/fruits/fruit1.tscn" id="3_eu402"]
+[ext_resource type="PackedScene" uid="uid://cefxbbbiij531" path="res://actors/fruit/fruits/fruit2.tscn" id="4_xswbw"]
+[ext_resource type="PackedScene" uid="uid://hiwt02v1qn6" path="res://actors/fruit/fruits/fruit3.tscn" id="5_o4hd6"]
+[ext_resource type="PackedScene" uid="uid://dcw6m7pfkgk3l" path="res://actors/fruit/fruits/fruit4.tscn" id="6_o341q"]
+
+[node name="Globals" type="Node"]
+script = ExtResource("1_qbgql")
+fruit_order = Array[PackedScene]([ExtResource("2_osk7j"), ExtResource("3_eu402"), ExtResource("4_xswbw"), ExtResource("5_o4hd6"), ExtResource("6_o341q")])
+spawnable_fruit = Array[PackedScene]([ExtResource("2_osk7j"), ExtResource("3_eu402"), ExtResource("4_xswbw"), ExtResource("5_o4hd6")])

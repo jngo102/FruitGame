@@ -17,7 +17,9 @@ alignment = 1
 
 [node name="label" type="Label" parent="vbox_container"]
 layout_mode = 2
-text = "Enter your name:"
+text = "You made the leaderboard!
+Enter your name:"
+horizontal_alignment = 1
 
 [node name="name_entry" type="LineEdit" parent="vbox_container"]
 layout_mode = 2
